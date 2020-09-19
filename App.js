@@ -1,16 +1,14 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './screens/HomeScreen';
-
-const Stack = createStackNavigator();
-
+import AppNavigator from './Navigation/AppNavigator';
+import { Provider } from 'react-redux';
+import store, { persistor } from './store';
+import { PersistGate } from 'redux-persist/integration/react';
 export default function App() {
-    return (
-        <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name="Home" component={HomeScreen} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <AppNavigator />
+      </PersistGate>
+    </Provider>
+  );
 }
