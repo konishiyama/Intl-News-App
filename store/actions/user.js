@@ -1,7 +1,7 @@
 export const addClip = ({ clip }) => {
   return {
     type: 'ADD_CLIP',
-    clip,
+    clip, //この部分がPayload
   };
 };
 

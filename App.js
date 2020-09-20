@@ -11,4 +11,5 @@ export default function App() {
       </PersistGate>
     </Provider>
   );
+  //ProviderはReduxのstoreを使えるようにするもの
 }

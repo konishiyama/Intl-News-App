@@ -18,6 +18,6 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = createStore(persistedReducer, composeWithDevTools());
-
+//composeWithDevToolsを第2引数に渡すことでDebugger使えるようにしている。
 export const persistor = persistStore(store);
 export default store;
