@@ -4,12 +4,12 @@ import ListItem from '../components/ListItem';
 import Constants from 'expo-constants';
 import axios from 'axios';
 import Loading from '../components/Loading';
+import Header from '../components/Header';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 const Tab = createMaterialTopTabNavigator();
 
 const URLKorea = `http://newsapi.org/v2/top-headlines?country=kr&apiKey=${Constants.manifest.extra.newsApiKey}`;
-const URLChosun = `http://newsapi.org/v2/everything?domains=chosun.com&apiKey=${Constants.manifest.extra.newsApiKey}`;
 
 export default HomeScreen = ({ navigation }) => {
   // const { navigation } = props;　または上のように({navigation})とする。要するに分割代入で、渡ってきたオブジェクトが（）に入れた段階で変数として定義される。この理屈についてはUdemyJavascriptのレッスン48の4：30あたりを見る
@@ -23,8 +23,7 @@ export default HomeScreen = ({ navigation }) => {
   const fetchArticles = async () => {
     setLoading(true);
     try {
-      const response = await axios.get(URLChosun);
-      // console.error(response);
+      const response = await axios.get(URLKorea);
       setArticles(response.data.articles);
     } catch (error) {
       console.error(error);

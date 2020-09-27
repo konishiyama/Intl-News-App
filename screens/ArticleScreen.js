@@ -30,7 +30,7 @@ export default ArticleScreen = ({ route }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ClipButton onPress={toggleClip} enabled={isClipped()} />
+      {/* <ClipButton onPress={toggleClip} enabled={isClipped()} /> */}
       <WebView
         source={{ uri: article.url }}
         // startInLoadingState={true}

@@ -1,14 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { StyleSheet, SafeAreaView, FlatList, Text } from 'react-native';
+import { StyleSheet, SafeAreaView, FlatList, Text, View } from 'react-native';
 import ListItem from '../components/ListItem';
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-  },
-});
+import Header from '../components/Header';
 
 export default ClipScreen = ({ navigation }) => {
   const user = useSelector((state) => state.user);
@@ -16,6 +10,9 @@ export default ClipScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
+      {/* <View style={styles.header}>
+        <Header />
+      </View> */}
       <FlatList
         data={clips}
         renderItem={({ item }) => (
@@ -35,3 +32,15 @@ export default ClipScreen = ({ navigation }) => {
     </SafeAreaView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  header: {
+    backgroundColor: 'black',
+    width: '100%',
+    height: '12%',
+  },
+});
