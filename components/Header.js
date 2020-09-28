@@ -5,9 +5,8 @@ import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 const Header = (props) => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <Text style={styles.title}>Global News</Text> */}
-      <View style={styles.containerHeader}>
-        <View style={styles.textContainer}></View>
+      <View style={styles.textContainer}>
+        <Text style={styles.title}>Global News</Text>
       </View>
     </SafeAreaView>
   );
@@ -16,19 +15,18 @@ const Header = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
+    backgroundColor: '#9370db',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  containerHeader: {
-    flex: 1,
-    flexDirection: 'column',
+  textContainer: {
     justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
     color: 'white',
-    fontSize: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
+    fontSize: 28,
+    fontFamily: 'Cochin',
   },
 });
 export default Header;
