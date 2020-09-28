@@ -15,4 +15,5 @@ export default function App() {
     </Provider>
   );
   //ProviderはReduxのstoreを使えるようにするもの
+  ///persistはstateの内容をストレージに保存してくれるライブラリ
 }

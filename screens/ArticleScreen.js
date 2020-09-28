@@ -19,6 +19,7 @@ export default ArticleScreen = ({ route }) => {
     return clips.some((clip) => clip.url === article.url);
   };
   //someは配列が条件を一つでも満たしていればtrueを返す。
+  //つまりisClippedはtrue falseを返す。
 
   const toggleClip = () => {
     if (isClipped()) {

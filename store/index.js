@@ -7,12 +7,15 @@ import { AsyncStorage } from 'react-native';
 
 const rootReducer = combineReducers({
   user: userReducer,
+  //この中に他の保持したい情報のReducerをツリーとして定義していく。
 });
+
+//persistはstateの保存をスマホのストレージに行うためのもの
 
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['user'],
+  whitelist: ['user'], //whitelistはstoreのうち保存するものを指定するためのもの
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
